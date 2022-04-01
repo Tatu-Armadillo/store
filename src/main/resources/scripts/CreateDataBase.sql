@@ -28,9 +28,10 @@ create table fornecedor (
 
 drop table if exists movimentos;
 create table movimentos (
-    id_movimentos bigint primary key auto_increment,
+    id_movimento bigint primary key auto_increment,
     data_saida date not null,
     total_quantidade bigint not null,
+    desconto decimal(6,2) default 0 not null,
     total_valor decimal(6,2) not null,
     produto bigint,
     cliente bigint

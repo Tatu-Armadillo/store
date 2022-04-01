@@ -30,6 +30,13 @@ public class MovimentoController {
         modelAndView.addObject("movimento", new Movimento());
         return modelAndView;
     }
+
+    @GetMapping("/lista")
+    public ModelAndView listMovimentos() {
+        ModelAndView modelAndView = new ModelAndView("movimentos/MovimentoList");
+        modelAndView.addObject("movimentos",movimentoService.listMovimentacoes());
+        return modelAndView;
+    }
     
     @PostMapping
     public String finalizarMovimento(@Valid Movimento movimento, BindingResult result) throws IOException {

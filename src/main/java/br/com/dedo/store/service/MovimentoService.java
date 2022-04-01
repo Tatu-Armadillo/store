@@ -42,6 +42,8 @@ public class MovimentoService {
 
         movimento.setCliente(clienteService.getCliente(movimento.getCliente().getIdCliente()).get());
 
+        movimento.setDesconto(BigDecimal.ZERO);
+
         movimentoRepository.save(movimento);
         this.movimento = movimento;
         return this.movimento;

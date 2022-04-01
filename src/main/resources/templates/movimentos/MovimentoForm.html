@@ -4,15 +4,18 @@
 <body>
     <main class="container">
         <h1>Movimentos</h1>
-        <form class="row" method="post" th:object="${movimento}" enctype="multipart/form-data">
+        <a class="btn btn-sm btn-primary" th:href="@{/movimentos/lista}">
+            Lista de Movimentos
+        </a>
+        <form class="row m-2" method="post" th:object="${movimento}" enctype="multipart/form-data">
             <div class="mb-3 col-6">
                 <label class="form-label" for="produtos">Produtos</label>
                 <select class="form-select" th:field="*{produto}">
-                    <option th:each="produto : ${produtos}" th:value="${produto.idProduto}" th:text="${produto.nomeProduto}">
+                    <option th:each="produto : ${produtos}" th:value="${produto.idProduto}"
+                        th:text="${produto.nomeProduto}">
                     </option>
                 </select>
             </div>
-
             <div class="mb-3 col-6">
                 <label class="form-label" for="quantidadeTotal">Quantidade</label>
                 <input class="form-control" type="number" th:field="*{quantidadeTotal}">
@@ -20,10 +23,14 @@
             <div class="mb-3 col-6">
                 <label class="form-label" for="quantidadeTotal">Clientes</label>
                 <select class="form-select" th:field="*{cliente}">
-                    <option th:each="cliente : ${clientes}" 
-                    th:value="${cliente.idCliente}" th:text="${cliente.nome}">
+                    <option th:each="cliente : ${clientes}" th:value="${cliente.idCliente}" th:text="${cliente.nome}">
                     </option>
                 </select>
+            </div>
+            <div class="mb-3 col-6">
+                <p class="form-label">Quantidade</p>
+                <button class="btn btn-outline-info" type="button">Salvar</button>
+                <label class="btn btn-outline-info">0</label>
             </div>
             <button class="btn btn-success" type="submit">Salvar</button>
         </form>

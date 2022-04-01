@@ -28,6 +28,9 @@ public class Movimento {
     @Column(name = "total_quantidade")
     private Long quantidadeTotal;
 
+    @Column(name = "desconto")
+    private BigDecimal desconto;
+
     @Column(name = "total_valor")
     private BigDecimal valorTotal;
 
@@ -41,10 +44,11 @@ public class Movimento {
 
     public Movimento() { }
 
-    public Movimento(LocalDate dataSaida, Long quantidadeTotal, BigDecimal valorTotal,
+    public Movimento(LocalDate dataSaida, Long quantidadeTotal, BigDecimal desconto, BigDecimal valorTotal,
             Produto produto, Cliente cliente) {
         this.dataSaida = dataSaida;
         this.quantidadeTotal = quantidadeTotal;
+        this.desconto = desconto;
         this.valorTotal = valorTotal;
         this.produto = produto;
         this.cliente = cliente;
@@ -65,6 +69,14 @@ public class Movimento {
 
     public void setDataSaida(LocalDate dataSaida) {
         this.dataSaida = dataSaida;
+    }
+
+    public BigDecimal getDesconto() {
+        return desconto;
+    }
+
+    public void setDesconto(BigDecimal desconto) {
+        this.desconto = desconto;
     }
 
     public BigDecimal getValorTotal() {

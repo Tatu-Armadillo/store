@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR" th:replace="~{base :: template(~{::main})}">
+
+<body>
+    <main class="container">
+        <h1>Lista de Movimentos</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Cliente</th>
+                    <th>Produto</th>
+                    <th>Quantidade</th>
+                    <th>Desconto</th>
+                    <th>Total</th>
+                    <th>Data da Venda</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="movimento : ${movimentos}">
+                    <td th:text="${movimento.idMovimento}"></td>
+                    <td th:text="${movimento.cliente.nome}"></td>
+                    <td th:text="${movimento.produto.nomeProduto}"></td>
+                    <td th:text="${movimento.quantidadeTotal}"></td>
+                    <td th:text="${movimento.desconto}"></td>
+                    <td th:text="${movimento.valorTotal}"></td>
+                    <td th:text="${movimento.dataSaida}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</body>
+
+</html>
