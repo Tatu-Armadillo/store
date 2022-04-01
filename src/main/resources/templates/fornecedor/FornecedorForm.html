@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR" th:replace="~{base :: template(~{::main})}">
+
+<body>
+    <h1>Cadastrar Fornecedor</h1>
+    <main class="container">
+        <form method="post" th:object="${fornecedor}" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label class="form-label" for="nomeFornecedor">Fornecedor</label>
+                <input class="form-control" type="text" th:field="*{nomeFornecedor}">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="cnpj">CNPJ</label>
+                <input class="form-control" type="text" th:field="*{cnpj}">
+            </div>
+            <button class="btn btn-success" type="submit">Salvar</button>
+            <a class="btn btn-danger" th:href="@{/fornecedores}">Voltar</a>
+        </form>
+    </main>
+</body>
+
+</html>

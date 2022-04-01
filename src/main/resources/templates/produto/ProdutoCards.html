@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-BR" th:replace="~{base :: template(~{::main})}">
+
+<body>
+    <main class="container">
+        <h1>Produtos</h1>
+        <div class="row g-0">
+            <div th:each="produto : ${produtos}" class="card m-2" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title" th:text="${produto.nomeProduto}"></h5>
+                    <h6 class="card-subtitle mb-2 text-muted" th:text="${produto.codigoProduto}"></h6>
+                    <p class="card-text" th:text="${produto.descricao}"></p>
+                    <p class="card-text" th:text="${produto.cor}"></p>
+                    <p class="card-text" th:text="'R$ ' + ${produto.venda}">R$ </p>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

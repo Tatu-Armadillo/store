@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR" th:replace="~{base :: template(~{::main})}">
+
+<body>
+    <main class="container">
+        <h1>Lista de Fornecedores</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Fornecedor</th>
+                    <th>CNPJ</th>
+                    <th>
+                        <a class="btn btn-sm btn-primary" th:href="@{/fornecedores/cadastrar}">
+                            Cadastrar Fornecedor
+                        </a>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="fornecedor : ${fornecedores}">
+                    <td th:text="${fornecedor.idFornecedor}"></td>
+                    <td th:text="${fornecedor.nomeFornecedor}"></td>
+                    <td th:text="${fornecedor.cnpj}"></td>
+                    <td>
+                        <a class="btn btn-danger" th:href="@{/fornecedores/{idFornecedor}/excluir (idFornecedor=${fornecedor.idFornecedor})}" 
+                        onclick="confirm('Tem certeza que deseja Excluir')">Excluir</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR" th:replace="~{base :: template(~{::main})}">
+
+<body>
+    <main class="container">
+        <h1>Cadastrar Produtos</h1>
+        <form class="row" method="post" th:object="${produto}" enctype="multipart/form-data">
+            <div class="mb-3 col-6">
+                <label class="form-label" for="nomeProduto">Produto</label>
+                <input class="form-control" type="text" th:field="*{nomeProduto}">
+            </div>
+            <div class="mb-3 col-6">
+                <label class="form-label" for="codigoProduto">Codigo Produto</label>
+                <input class="form-control" type="text" th:field="*{codigoProduto}">
+            </div>
+            <div class="mb-3 col-6">
+                <label class="form-label" for="compra">Valor de Compra</label>
+                <input class="form-control" type="text" th:field="*{compra}">
+            </div>
+            <div class="mb-3 col-6">
+                <label class="form-label" for="venda">Valor de Venda</label>
+                <input class="form-control" type="text" th:field="*{venda}">
+            </div>
+            <div class="mb-3 col-6">
+                <label class="form-label" for="descricao">Descricao do Produto</label>
+                <input class="form-control" type="text" th:field="*{descricao}">
+            </div>
+            <div class="mb-3 col-6">
+                <label class="form-label" for="tamanho">Tamanho</label>
+                <input class="form-control" type="text" th:field="*{tamanho}">
+            </div>
+            <div class="mb-3 col-6">
+                <label class="form-label" for="cor">Cor</label>
+                <input class="form-control" type="text" th:field="*{cor}">
+            </div>
+            <div class="mb-3 col-6">
+                <label class="form-label" for="quantidadeEstoque">Quantidade Estocada</label>
+                <input class="form-control" type="text" th:field="*{quantidadeEstoque}">
+            </div>
+            <div class="mb-3 col-6">
+                <label class="form-label" for="fornecedor">Fornecedores</label>
+                <select class="form-select" th:field="*{fornecedor}">
+                    <option th:each="fornecedor : ${fornecedores}" th:value="${fornecedor.idFornecedor}"
+                        th:text="${fornecedor.nomeFornecedor}">
+                    </option>
+                </select>
+            </div>
+            <div class="col-12 d-grid gap-2">
+                <button class="btn btn-success" type="submit">Salvar</button>
+                <a class="btn btn-danger" th:href="@{/produtos}">Voltar</a>
+            </div>
+        </form>
+    </main>
+</body>
+
+</html>

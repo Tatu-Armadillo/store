@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR" th:replace="~{base :: template(~{::main})}">
+
+<body>
+    <main class="container">
+        <h1>Lista de Produtos</h1> 
+        <a class="btn btn-sm btn-primary" th:href="@{/produtos/cards}">Cards</a>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Produto</th>
+                    <th>codigo</th>
+                    <th>Preco Compra</th>
+                    <th>Preco Venda</th>
+                    <th>Tamanho</th>
+                    <th>Cor</th>
+                    <th>Estoque</th>
+                    <th>Data de Registro</th>
+                    <th>
+                        <a class="btn btn-sm btn-primary" th:href="@{/produtos/cadastrar}">Cadastrar Produto</a>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="produto : ${produtos}">
+                    <td th:text="${produto.idProduto}"></td>
+                    <td th:text="${produto.nomeProduto}"></td>
+                    <td th:text="${produto.codigoProduto}"></td>
+                    <td th:text="${produto.compra}"></td>
+                    <td th:text="${produto.venda}"></td>
+                    <td th:text="${produto.tamanho}"></td>
+                    <td th:text="${produto.cor}"></td>
+                    <td th:text="${produto.quantidadeEstoque}"></td>
+                    <td th:text="${produto.entrada}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</body>
+
+</html>
