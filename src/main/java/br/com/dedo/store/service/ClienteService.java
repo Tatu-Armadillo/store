@@ -16,12 +16,16 @@ public class ClienteService {
 
     @Autowired
     private ClienteRepository clienteRepository;
+    
+    @Autowired
+    private EnderecoService enderecoService;
 
     public List<Cliente> listClientes() {
         return clienteRepository.findAll();
     }
 
     public Cliente saveCliente(Cliente cliente) {
+        cliente.setEndereco(enderecoService.getEndereco(1L));
         this.cliente = clienteRepository.save(cliente);
         return this.cliente;
     }

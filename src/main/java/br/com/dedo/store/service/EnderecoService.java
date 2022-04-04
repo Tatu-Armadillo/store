@@ -18,6 +18,10 @@ public class EnderecoService {
         return enderecoRepository.findAll();
     }
 
+    public Endereco getEndereco(Long idEndereco) {
+        return enderecoRepository.getById(idEndereco);
+    }
+
     public Endereco saveEndereco(Endereco endereco) {
         return enderecoRepository.save(endereco);
     }

@@ -1,4 +1,4 @@
-package br.com.dedo.store.controller;
+package br.com.dedo.store.controller.cliente;
 
 import java.util.List;
 import java.util.Optional;
@@ -15,8 +15,8 @@ import br.com.dedo.store.repository.ClienteRepository;
 import br.com.dedo.store.service.ClienteService;
 
 @RestController
-@RequestMapping("/clientes")
-public class ClienteController {
+@RequestMapping("/api/clientes")
+public class ClienteRestController {
 
     @Autowired
     private ClienteRepository clienteRepository;
