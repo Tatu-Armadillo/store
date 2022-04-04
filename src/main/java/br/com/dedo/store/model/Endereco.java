@@ -23,8 +23,7 @@ public class Endereco {
     private String cidade;
     private String cep;
 
-    public Endereco() {
-    }
+    public Endereco() { }
 
     public Endereco(Long numero, String quadra, String rua, String bairro, String cidade, String cep) {
         this.numero = numero;

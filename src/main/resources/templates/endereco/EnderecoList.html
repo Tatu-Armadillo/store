@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR" th:replace="~{base :: template(~{::main})}">
+
+<body>
+    <main class="container">
+        <h1>Lista de Fornecedores</h1>
+        <a class="btn btn-sm btn-primary" th:href="@{/enderecos/cadastrar}">
+            Cadastrar Endereco
+        </a>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>CEP</th>
+                    <th>Bairro</th>
+                    <th>Rua</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="endereco : ${enderecos}">
+                    <td th:text="${endereco.idEndereco}"></td>
+                    <td th:text="${endereco.cep}"></td>
+                    <td th:text="${endereco.bairro}"></td>
+                    <td th:text="${endereco.rua}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</body>
+
+</html>

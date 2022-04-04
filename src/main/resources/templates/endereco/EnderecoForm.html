@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR" th:replace="~{base :: template(~{::main})}">
+
+<body>
+    <main class="container">
+        <h1>Cadastrar Endereco</h1>
+        <form method="post" th:object="${endereco}" enctype="multipart/form-data" class="row">
+            <div class="mb-3 col-6">
+                <label class="form-label" for="cep">CEP</label>
+                <input class="form-control" type="text" th:field="*{cep}">
+            </div>
+            <div class="mb-3 col-6">
+                <label class="form-label" for="cidade">Cidade</label>
+                <input class="form-control" type="text" th:field="*{cidade}">
+            </div>
+            <div class="mb-3 col-6">
+                <label class="form-label" for="bairro">Bairro</label>
+                <input class="form-control" type="text" th:field="*{bairro}">
+            </div>
+            <div class="mb-3 col-6">
+                <label class="form-label" for="rua">Rua</label>
+                <input class="form-control" type="text" th:field="*{rua}">
+            </div>
+            <div class="mb-3 col-6">
+                <label class="form-label" for="quadra">Quadra</label>
+                <input class="form-control" type="text" th:field="*{quadra}">
+            </div>
+            <div class="mb-3 col-6">
+                <label class="form-label" for="numero">Numero da residencia</label>
+                <input class="form-control" type="text" th:field="*{numero}">
+            </div>
+            <button class="btn btn-success mb-2" type="submit">Salvar</button>
+            <a class="btn btn-danger" th:href="@{/enderecos}">Voltar</a>
+        </form>
+    </main>
+</body>
+
+</html>
